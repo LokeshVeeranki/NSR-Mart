@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --primary: #0F172A; /* Navy */
+  --accent: #F97316; /* Orange */
+  --text-dark: #1E293B;
+  --text-gray: #64748B;
+  --bg-light: #F8FAFC;
+  --bg-white: #FFFFFF;
+  --border: #E2E8F0;
+}
+
+.pageWrapper {
+  background-color: var(--bg-light);
+  min-height: 100vh;
+  padding: 8rem 0 6rem 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- HEADER --- */
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pageTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.breadcrumbs {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+.breadcrumbs span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- TOOLBAR --- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: var(--bg-white);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.filterToggle {
+  display: none; /* Hidden on desktop */
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid var(--primary);
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resultCount {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+.resultCount strong {
+  color: var(--text-dark);
+}
+
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sortSelect {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  outline: none;
+  color: var(--primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.viewToggle {
+  display: flex;
+  gap: 5px;
+  border-left: 1px solid var(--border);
+  padding-left: 1.5rem;
+}
+
+.viewToggle button {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text-gray);
+  transition: color 0.2s;
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.activeView {
+  color: var(--primary) !important;
+}
+
+/* --- LAYOUT --- */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* --- SIDEBAR FILTERS --- */
+.sidebar {
+  background-color: var(--bg-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.sidebarHeader {
+  display: none;
+}
+
+.filterGroup {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.filterGroup:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.filterGroup h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.filterList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filterList li {
+  margin-bottom: 0.5rem;
+}
+
+.filterList button {
+  background: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.filterList button:hover, .activeFilter {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+/* Price Range */
+.priceInputs {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  margin-bottom: 0.5rem;
+}
+
+.rangeSlider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Checkboxes */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.starFill { color: #FBBF24; fill: #FBBF24; font-size: 0.9rem; }
+.starEmpty { color: #CBD5E1; font-size: 0.9rem; }
+
+/* --- GRID VIEW --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #F1F5F9;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover .imageWrapper img {
+  transform: scale(1.08);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.wishlistBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover .wishlistBtn {
+  opacity: 1;
+}
+
+.quickAdd {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 90%;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  opacity: 0;
+}
+
+.card:hover .quickAdd {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.details {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.catName {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.prodName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 4px 0;
+  line-height: 1.3;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.starIcon {
+  color: #FBBF24;
+  fill: #FBBF24;
+}
+
+.reviewCount {
+  font-weight: 400;
+  color: var(--text-gray);
+}
+
+.priceBox {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+/* --- LIST VIEW --- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.list .card {
+  flex-direction: row;
+  height: 220px;
+}
+
+.list .imageWrapper {
+  width: 220px;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.list .details {
+  padding: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.list .desc {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.listAddBtn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.listAddBtn:hover {
+  background-color: var(--accent);
+}
+
+/* --- PAGINATION --- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4rem;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--text-gray);
+  transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pagination .activePage {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- NO RESULTS --- */
+.noResults {
+  text-align: center;
+  padding: 4rem;
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.resetBtn {
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .layout {
+    display: block;
+  }
+
+  .filterToggle {
+    display: flex;
+  }
+
+  .resultCount {
+    display: none;
+  }
+
+  /* Mobile Drawer Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 1200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .sidebarHeader button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .list .card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .list .imageWrapper {
+    width: 100%;
+    height: 250px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .toolbarActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .quickAdd {
+    display: none; /* Hide hover interactions on mobile */
+  }
+}

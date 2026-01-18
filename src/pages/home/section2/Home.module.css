@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #0F172A;
+  --accent: #F97316;
+  --text-dark: #1E293B;
+  --text-gray: #64748B;
+  --bg-white: #FFFFFF;
+}
+
+.section {
+  background-color: #FFFFFF;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+}
+
+.subTitle {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.accent {
+  color: var(--accent);
+  position: relative;
+  display: inline-block;
+}
+
+.accent::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(249, 115, 22, 0.2);
+  z-index: -1;
+}
+
+.viewAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  padding-bottom: 2px;
+}
+
+.viewAllBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  gap: 12px;
+}
+
+/* --- GRID --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+/* --- CATEGORY CARD --- */
+.card {
+  background-color: var(--bg-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  border: 1px solid #F1F5F9;
+  transition: all 0.4s ease;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  border-color: var(--hover-color);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.catImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .catImage {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shopNow {
+  background-color: #fff;
+  color: var(--primary);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .overlay { opacity: 1; }
+.card:hover .shopNow { transform: translateY(0); }
+
+/* Card Content */
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  background: linear-gradient(to right, #fff, var(--hover-color));
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: background-position 0.4s ease;
+}
+
+.card:hover .cardContent {
+  background-position: right bottom;
+}
+
+.iconBox {
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.catName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.catItems {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-gray);
+}
+
+.arrowBtn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 0.3s;
+  border: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.card:hover .arrowBtn {
+  background-color: var(--primary);
+  color: #fff;
+  transform: rotate(-45deg);
+}
+
+/* --- FLASH BANNER --- */
+.flashBanner {
+  background: linear-gradient(135deg, var(--primary) 0%, #1E293B 100%);
+  border-radius: 16px;
+  padding: 2.5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+.flashContent {
+  position: relative;
+  z-index: 2;
+}
+
+.flashTag {
+  background-color: var(--accent);
+  color: #fff;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.flashContent h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.strike {
+  text-decoration: line-through;
+  opacity: 0.6;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.flashContent strong {
+  color: #4ADE80;
+  font-weight: 700;
+}
+
+.flashContent p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.flashBtn {
+  background-color: #fff;
+  color: var(--primary);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flashBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+}
+
+/* Decorative Circles */
+.circle1, .circle2 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  background: #fff;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -50px;
+}
+
+.circle2 {
+  width: 150px;
+  height: 150px;
+  bottom: -40px;
+  left: 50px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .title { font-size: 2.2rem; }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flashBanner {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .flashContent h3 { font-size: 1.5rem; }
+}

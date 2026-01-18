@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Matching Header Theme */
+  --primary: #0F172A;
+  --primary-dark: #020617;
+  --accent: #F97316;
+  --accent-hover: #EA580C;
+  --text-light: #F8FAFC;
+  --text-muted: #94A3B8;
+  --bg-dark-secondary: #1E293B;
+}
+
+.footer {
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--text-light);
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =========================================
+   1. TOP SECTION (NEWSLETTER)
+   ========================================= */
+.topSection {
+  background-color: var(--bg-dark-secondary);
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.topGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Newsletter Area */
+.newsContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.newsText {
+  max-width: 400px;
+}
+
+.newsTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.newsDesc {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.newsForm {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.newsForm input {
+  width: 100%;
+  background: var(--primary);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 14px 14px 14px 45px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.newsForm input:focus {
+  border-color: var(--accent);
+}
+
+.subBtn {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.subBtn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Support Box */
+.supportBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.05);
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.supportIcon {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.supportLabel {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.supportNumber {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* =========================================
+   2. MAIN FOOTER LINKS
+   ========================================= */
+.mainFooter {
+  padding: 5rem 0 3rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+}
+
+/* Brand Column */
+.colBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logoText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.brandBio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 320px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.socialIcons a:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Link Columns */
+.colTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.colLinks ul,
+.colContact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.colLinks li {
+  margin-bottom: 0.8rem;
+}
+
+.colLinks a {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.colLinks a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Contact Column */
+.colContact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.colContact a {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.colContact a:hover {
+  color: var(--accent);
+}
+
+.icon {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   3. BOTTOM BAR
+   ========================================= */
+.bottomBar {
+  background-color: var(--primary-dark);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.paymentIcon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.8;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* =========================================
+   4. RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .topGrid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsForm {
+    width: 100%;
+  }
+
+  .supportBox {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .topSection,
+  .mainFooter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .newsForm {
+    flex-direction: column;
+  }
+
+  .subBtn {
+    width: 100%;
+    padding: 14px;
+    justify-content: center;
+  }
+
+  .bottomContent {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .paymentMethods {
+    justify-content: center;
+  }
+}

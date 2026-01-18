@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Navy & Orange Theme */
+  --primary: #0F172A; 
+  --accent: #F97316; 
+  --text-dark: #1E293B;
+  --text-gray: #64748B;
+  --bg-light: #F8FAFC;
+  --white: #FFFFFF;
+}
+
+.heroSection {
+  background-color: var(--bg-light);
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+/* Background Abstract Blob */
+.bgBlob {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(135deg, #E2E8F0 0%, #F1F5F9 100%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 0;
+  opacity: 0.6;
+  animation: blobFloat 20s infinite alternate;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- LEFT CONTENT --- */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: slideUp 0.8s ease-out;
+}
+
+.saleBadge {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: var(--accent);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(249, 115, 22, 0.7);
+  animation: pulse 2s infinite;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: rgba(253, 224, 71, 0.6);
+  z-index: -1;
+  transform: rotate(-1deg);
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 90%;
+  margin-bottom: 2.5rem;
+}
+
+/* Buttons */
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.primaryBtn {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+}
+
+.primaryBtn:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(249, 115, 22, 0.3);
+}
+
+.secondaryBtn {
+  background-color: var(--white);
+  color: var(--primary);
+  padding: 1rem 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid #E2E8F0;
+}
+
+.secondaryBtn:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Trust Indicators */
+.trustRow {
+  display: flex;
+  gap: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #E2E8F0;
+  width: 100%;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBox {
+  width: 45px;
+  height: 45px;
+  background-color: #E0F2FE;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.trustText {
+  display: flex;
+  flex-direction: column;
+}
+
+.trustText strong {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.trustText span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-gray);
+}
+
+/* --- RIGHT VISUALS --- */
+.visuals {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+/* Floating Cards */
+.floatCard {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.card1 {
+  top: 10%;
+  left: -40px;
+  width: 220px;
+}
+
+.miniImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardInfo span {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cardInfo strong {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.card2 {
+  bottom: 15%;
+  right: -30px;
+  padding: 1.2rem;
+  animation-delay: 2s;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 160px;
+}
+
+.discountBadge {
+  background-color: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes blobFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20px, 20px) scale(1.05); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .title { font-size: 3rem; }
+  .imageWrapper { height: 500px; }
+  .bgBlob { width: 80%; }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+    order: 2;
+  }
+
+  .title { font-size: 2.5rem; }
+  .description { margin: 0 auto 2rem auto; }
+  .trustRow { justify-content: center; }
+
+  .visuals {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+
+  .imageWrapper {
+    max-width: 400px;
+    height: 400px;
+  }
+
+  .card1 { left: -10px; top: 5%; width: 180px; }
+  .card2 { right: -10px; bottom: 5%; }
+}
+
+@media (max-width: 480px) {
+  .heroSection { padding-top: 2rem; }
+  .ctaGroup { width: 100%; flex-direction: column; }
+  .primaryBtn,
+  .secondaryBtn { width: 100%; justify-content: center; }
+  .trustRow { flex-direction: column; gap: 1.5rem; }
+  .card1,
+  .card2 { display: none; }
+}
